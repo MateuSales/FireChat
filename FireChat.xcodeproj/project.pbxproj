@@ -13,6 +13,7 @@
 		60450C6C24735C5400DFF6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60450C6A24735C5400DFF6EB /* Main.storyboard */; };
 		60450C6E24735C5800DFF6EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60450C6D24735C5800DFF6EB /* Assets.xcassets */; };
 		60450C7124735C5800DFF6EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60450C6F24735C5800DFF6EB /* LaunchScreen.storyboard */; };
+		60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C7E24735D2100DFF6EB /* ConversationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		60450C6D24735C5800DFF6EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60450C7024735C5800DFF6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60450C7224735C5800DFF6EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60450C7E24735D2100DFF6EB /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,12 @@
 		60450C6324735C5400DFF6EB /* FireChat */ = {
 			isa = PBXGroup;
 			children = (
+				60450C7D24735CEB00DFF6EB /* Utils */,
+				60450C7C24735CE300DFF6EB /* Controller */,
+				60450C7B24735CDA00DFF6EB /* API */,
+				60450C7A24735CD300DFF6EB /* ViewModel */,
+				60450C7924735CCC00DFF6EB /* View */,
+				60450C7824735CC400DFF6EB /* Model */,
 				60450C6424735C5400DFF6EB /* AppDelegate.swift */,
 				60450C6624735C5400DFF6EB /* SceneDelegate.swift */,
 				60450C6824735C5400DFF6EB /* ViewController.swift */,
@@ -65,6 +73,49 @@
 				60450C7224735C5800DFF6EB /* Info.plist */,
 			);
 			path = FireChat;
+			sourceTree = "<group>";
+		};
+		60450C7824735CC400DFF6EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60450C7924735CCC00DFF6EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60450C7A24735CD300DFF6EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		60450C7B24735CDA00DFF6EB /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		60450C7C24735CE300DFF6EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60450C7E24735D2100DFF6EB /* ConversationsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60450C7D24735CEB00DFF6EB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +191,7 @@
 			files = (
 				60450C6924735C5400DFF6EB /* ViewController.swift in Sources */,
 				60450C6524735C5400DFF6EB /* AppDelegate.swift in Sources */,
+				60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */,
 				60450C6724735C5400DFF6EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
