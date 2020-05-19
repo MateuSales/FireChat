@@ -14,6 +14,8 @@
 		60450C6E24735C5800DFF6EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60450C6D24735C5800DFF6EB /* Assets.xcassets */; };
 		60450C7124735C5800DFF6EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60450C6F24735C5800DFF6EB /* LaunchScreen.storyboard */; };
 		60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C7E24735D2100DFF6EB /* ConversationsController.swift */; };
+		60450C82247366D600DFF6EB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C81247366D600DFF6EB /* LoginController.swift */; };
+		60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C83247366E400DFF6EB /* RegistrationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		60450C7024735C5800DFF6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60450C7224735C5800DFF6EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60450C7E24735D2100DFF6EB /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		60450C81247366D600DFF6EB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		60450C83247366E400DFF6EB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		60450C7C24735CE300DFF6EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				60450C80247366B300DFF6EB /* Authentication */,
 				60450C7E24735D2100DFF6EB /* ConversationsController.swift */,
 			);
 			path = Controller;
@@ -116,6 +121,15 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		60450C80247366B300DFF6EB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				60450C81247366D600DFF6EB /* LoginController.swift */,
+				60450C83247366E400DFF6EB /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,8 @@
 				60450C6524735C5400DFF6EB /* AppDelegate.swift in Sources */,
 				60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */,
 				60450C6724735C5400DFF6EB /* SceneDelegate.swift in Sources */,
+				60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */,
+				60450C82247366D600DFF6EB /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
