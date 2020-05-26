@@ -17,6 +17,8 @@
 		60450C82247366D600DFF6EB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C81247366D600DFF6EB /* LoginController.swift */; };
 		60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C83247366E400DFF6EB /* RegistrationController.swift */; };
 		60450C862474891400DFF6EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C852474891400DFF6EB /* Extensions.swift */; };
+		60450C88247CA41700DFF6EB /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C87247CA41700DFF6EB /* InputContainerView.swift */; };
+		60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C89247CA73400DFF6EB /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		60450C81247366D600DFF6EB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		60450C83247366E400DFF6EB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		60450C852474891400DFF6EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		60450C87247CA41700DFF6EB /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		60450C89247CA73400DFF6EB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 		60450C7924735CCC00DFF6EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60450C87247CA41700DFF6EB /* InputContainerView.swift */,
+				60450C89247CA73400DFF6EB /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				60450C6924735C5400DFF6EB /* ViewController.swift in Sources */,
+				60450C88247CA41700DFF6EB /* InputContainerView.swift in Sources */,
 				60450C6524735C5400DFF6EB /* AppDelegate.swift in Sources */,
 				60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */,
 				60450C6724735C5400DFF6EB /* SceneDelegate.swift in Sources */,
 				60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */,
 				60450C82247366D600DFF6EB /* LoginController.swift in Sources */,
 				60450C862474891400DFF6EB /* Extensions.swift in Sources */,
+				60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

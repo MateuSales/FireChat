@@ -19,6 +19,32 @@ class LoginController: UIViewController {
         return iv
     }()
     
+    private lazy var emailContainerView: InputContainerView = {
+        return InputContainerView(textfield: emailTextField, image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"))
+    }()
+    
+    private lazy var passwordContainerView: InputContainerView = {
+        return InputContainerView(textfield: passwordTextField, image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"))
+    }()
+    
+    private let loginButton: UIButton = {
+        let bt = UIButton(type: .system)
+        bt.setTitle("Log In", for: .normal)
+        bt.layer.cornerRadius = 5
+        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        bt.backgroundColor = .systemRed
+        bt.setHeight(height: 50)
+        return bt
+    }()
+    
+    private let emailTextField = CustomTextField(placeholder: "Email")
+    
+    private let passwordTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Password")
+        tf.isSecureTextEntry = true
+        return tf
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -36,10 +62,18 @@ class LoginController: UIViewController {
         configureGradientLayer()
         
         view.addSubview(imageIcon)
-        imageIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        imageIcon.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        imageIcon.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        imageIcon.centerX(inView: view)
+        imageIcon.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+        imageIcon.setDimensions(width: 120, height: 120)
+        
+        let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
+        
+        stack.axis = .vertical
+        stack.spacing = 16
+        view.addSubview(stack)
+        
+        stack.anchor(top: imageIcon.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
         
     }
     
