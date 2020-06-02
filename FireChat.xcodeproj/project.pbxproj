@@ -19,6 +19,7 @@
 		60450C862474891400DFF6EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C852474891400DFF6EB /* Extensions.swift */; };
 		60450C88247CA41700DFF6EB /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C87247CA41700DFF6EB /* InputContainerView.swift */; };
 		60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C89247CA73400DFF6EB /* CustomTextField.swift */; };
+		6079DD662485D70D0001AD0D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6079DD652485D70D0001AD0D /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		60450C852474891400DFF6EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		60450C87247CA41700DFF6EB /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		60450C89247CA73400DFF6EB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		6079DD652485D70D0001AD0D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		60450C7A24735CD300DFF6EB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6079DD652485D70D0001AD0D /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */,
 				60450C82247366D600DFF6EB /* LoginController.swift in Sources */,
 				60450C862474891400DFF6EB /* Extensions.swift in Sources */,
+				6079DD662485D70D0001AD0D /* LoginViewModel.swift in Sources */,
 				60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +377,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mateussales.FireChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mateussales.FireChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
