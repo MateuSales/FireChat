@@ -20,6 +20,7 @@
 		60450C88247CA41700DFF6EB /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C87247CA41700DFF6EB /* InputContainerView.swift */; };
 		60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60450C89247CA73400DFF6EB /* CustomTextField.swift */; };
 		6079DD662485D70D0001AD0D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6079DD652485D70D0001AD0D /* LoginViewModel.swift */; };
+		6079DD682485E47F0001AD0D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6079DD672485E47F0001AD0D /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		60450C87247CA41700DFF6EB /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		60450C89247CA73400DFF6EB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		6079DD652485D70D0001AD0D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6079DD672485E47F0001AD0D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6079DD652485D70D0001AD0D /* LoginViewModel.swift */,
+				6079DD672485E47F0001AD0D /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60450C6924735C5400DFF6EB /* ViewController.swift in Sources */,
+				6079DD682485E47F0001AD0D /* RegistrationViewModel.swift in Sources */,
 				60450C88247CA41700DFF6EB /* InputContainerView.swift in Sources */,
 				60450C6524735C5400DFF6EB /* AppDelegate.swift in Sources */,
 				60450C7F24735D2100DFF6EB /* ConversationsController.swift in Sources */,
