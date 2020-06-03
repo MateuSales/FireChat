@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class RegistrationController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -56,6 +58,7 @@ class RegistrationController: UIViewController {
         bt.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         bt.setTitleColor(.white, for: .normal)
         bt.setHeight(height: 50)
+        bt.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return bt
     }()
     
@@ -73,7 +76,7 @@ class RegistrationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        congfigureNotifcationsIbservers()
+        congfigureNotifcationsObservers()
     }
     
     // MARK: - Helpers
@@ -99,7 +102,7 @@ class RegistrationController: UIViewController {
         
     }
     
-    func congfigureNotifcationsIbservers() {
+    func congfigureNotifcationsObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
@@ -131,6 +134,38 @@ class RegistrationController: UIViewController {
         
         checkFromStatus()
     }
+    
+    @objc func handleRegistration() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let profileImage = profileImage else { return }
+        
+        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
+        
+        let filename = NSUUID().uuidString
+        let ref = Storage.storage().reference(withPath: "/profile_images/\(filename)")
+        
+        ref.putData(imageData, metadata: nil) { (meta, error) in
+            if let error = error {
+                print("ERROR TO UPLOAD IMAGE: \(error.localizedDescription)")
+                return
+            }
+            
+            ref.downloadURL { (url, error) in
+                guard let profileImageUrl = url?.absoluteString else { return }
+                
+                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                    if let error = error {
+                        print("ERROR CREATE USER: \(error.localizedDescription)")
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 
@@ -139,6 +174,7 @@ class RegistrationController: UIViewController {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        profileImage = image
         plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor
         plusPhotoButton.layer.borderWidth = 3.0
@@ -149,6 +185,8 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: - AuthenticationControllerProtocol
 
 extension RegistrationController: AuthenticationControllerProtocol {
     func checkFromStatus() {
