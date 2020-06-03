@@ -138,7 +138,7 @@ class RegistrationController: UIViewController {
     @objc func handleRegistration() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        guard let username = usernameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
         guard let fullname = fullnameTextField.text else { return }
         guard let profileImage = profileImage else { return }
         
@@ -161,6 +161,23 @@ class RegistrationController: UIViewController {
                         print("ERROR CREATE USER: \(error.localizedDescription)")
                         return
                     }
+                    
+                    guard let uid = result?.user.uid else { return }
+                    
+                    let data = ["email": email,
+                                "fullname": fullname,
+                                "profileImageUrl": profileImageUrl,
+                                "uid": uid,
+                                "username": username] as [String: Any]
+                    
+                    Firestore.firestore().collection("users").document(uid).setData(data) { (error) in
+                        if let error = error {
+                            print("ERRO CREATE USER: \(error.localizedDescription)")
+                        }
+                        
+                        print("USER CREATED WITH SUCCESS")
+                    }
+                    
                 }
             }
         }
