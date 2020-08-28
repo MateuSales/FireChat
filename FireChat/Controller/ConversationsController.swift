@@ -9,13 +9,25 @@
 import UIKit
 import Firebase
 
-private let reuseIndentifier = "ConversationCell"
+private let reuseIdentifier = "ConversationCell"
 
 class ConversationsController: UIViewController {
     
     // MARK: - Properties
     
     private let tableView = UITableView()
+    
+    private let newMessageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.backgroundColor = .systemPurple
+        button.tintColor = .white
+        button.imageView?.setDimensions(width: 24, height: 24)
+        button.setDimensions(width: 56, height: 56)
+        button.layer.cornerRadius = 56 / 2
+        button.addTarget(self, action: #selector(showNewMessage), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: - Lifecycle
     
@@ -33,7 +45,9 @@ class ConversationsController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             presentLoginScreen()
         } else {
-            print(Auth.auth().currentUser?.uid)
+            if let info = Auth.auth().currentUser?.uid {
+                print(info)
+            }
         }
     }
     
@@ -52,6 +66,13 @@ class ConversationsController: UIViewController {
         logout()
     }
     
+    @objc func showNewMessage() {
+        let controller = NewMessageController()
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
+    }
+    
     // MARK: - Helpers
     
     func presentLoginScreen() {
@@ -66,18 +87,21 @@ class ConversationsController: UIViewController {
     func configureUI() {
         view.backgroundColor = .white
 
-        configureNavigationBar()
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
         configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
+        
+        view.addSubview(newMessageButton)
+        newMessageButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 16, paddingRight: 24)
         
     }
     
     func configureTableView() {
         tableView.backgroundColor = .white
         tableView.rowHeight = 80
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIndentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
@@ -86,25 +110,7 @@ class ConversationsController: UIViewController {
         tableView.frame = view.frame
     }
     
-    func configureNavigationBar() {
-        let appearence = UINavigationBarAppearance()
-        appearence.configureWithOpaqueBackground()
-        appearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearence.backgroundColor = .systemPurple
-        
-        let navBar = navigationController?.navigationBar
-        navBar?.compactAppearance = appearence
-        navBar?.standardAppearance = appearence
-        navBar?.scrollEdgeAppearance = appearence
-        
-        navBar?.prefersLargeTitles = true
-        navigationItem.title = "Messages"
-        navBar?.tintColor = .white
-        navBar?.isTranslucent = true
-        
-        navBar?.overrideUserInterfaceStyle = .dark
-        
-    }
+
 }
 
 extension ConversationsController: UITableViewDelegate {
@@ -119,7 +125,7 @@ extension ConversationsController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIndentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         cell.textLabel?.text = "test"
         return cell
     }
