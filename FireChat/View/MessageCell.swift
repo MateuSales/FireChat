@@ -12,6 +12,10 @@ class MessageCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    var message: Message? {
+        didSet { configure() }
+    }
+    
     private lazy var textView: UITextView = {
         let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
@@ -19,7 +23,6 @@ class MessageCell: UICollectionViewCell {
         tv.isEditable = false
         tv.isScrollEnabled = false
         tv.textColor = .white
-        tv.text = "Some test for message now..."
         return tv
     }()
     
@@ -60,4 +63,14 @@ class MessageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Helpers
+    
+    func configure() {
+        guard let message = message else { return }
+        let viewModel = MessageViewModel(message: message)
+        
+        bubbleContainer.backgroundColor = viewModel.messageBackgroundColor
+        textView.textColor = viewModel.messageTextColor
+        textView.text = message.text
+    }
 }
