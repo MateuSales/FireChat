@@ -19,7 +19,8 @@ class ChatController: UICollectionViewController {
     var fromCurrentUser: Bool = false
     
     private lazy var customInputView: CustomInputAccessoryView = {
-        let iv = CustomInputAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))
+        let iv = CustomInputAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+//        let iv = CustomInputAccessoryView()
         iv.delegate = self
         return iv
     }()
@@ -29,6 +30,10 @@ class ChatController: UICollectionViewController {
     init(user: User) {
         self.user = user
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        
+//        collectionView.addSubview(customInputView)
+//        customInputView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+//        customInputView.setDimensions(width: view.frame.width, height: 50)
     }
     
     required init?(coder: NSCoder) {

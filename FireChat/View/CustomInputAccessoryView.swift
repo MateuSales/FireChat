@@ -18,10 +18,11 @@ class CustomInputAccessoryView: UIView {
     
     weak var delegate: CustomAccessoryInputDelegate?
     
-    lazy var messageInputTextView: UITextView = {
+    var messageInputTextView: UITextView = {
         let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
         tv.backgroundColor = .clear
+        tv.isScrollEnabled = false
         return tv
     }()
     
