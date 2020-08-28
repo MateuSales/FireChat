@@ -12,6 +12,10 @@ class UserCell: UITableViewCell {
     
     // MARK: - Properties
     
+    var user: User? {
+        didSet { configure() }
+    }
+    
     private let profileImage: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .systemPurple
@@ -57,5 +61,17 @@ class UserCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    
+    func configure() {
+        guard let user = user else { return }
+        fullnameLabel.text = user.fullname
+        usernameLabel.text = user.username
+        
+        guard let url = URL(string: user.profileImageUrl) else { return }
+        profileImage.sd_setImage(with: url)
+        
     }
 }

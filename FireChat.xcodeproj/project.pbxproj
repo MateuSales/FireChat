@@ -28,6 +28,9 @@
 		60C40AEB24F9441000DACCD8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AEA24F9441000DACCD8 /* UserCell.swift */; };
 		60C40AED24F94AD800DACCD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AEC24F94AD800DACCD8 /* User.swift */; };
 		60C40AEF24F94B8500DACCD8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AEE24F94B8500DACCD8 /* Service.swift */; };
+		60C40AF124F9766F00DACCD8 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AF024F9766F00DACCD8 /* ChatController.swift */; };
+		60C40AF324F97C7C00DACCD8 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AF224F97C7C00DACCD8 /* CustomInputAccessoryView.swift */; };
+		60C40AF524F98D3500DACCD8 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C40AF424F98D3500DACCD8 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		60C40AEA24F9441000DACCD8 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		60C40AEC24F94AD800DACCD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60C40AEE24F94B8500DACCD8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		60C40AF024F9766F00DACCD8 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		60C40AF224F97C7C00DACCD8 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		60C40AF424F98D3500DACCD8 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		77C19927EE9EB43E32EB9546 /* Pods_FireChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42A43A97D3BEE5E54B0ABA6 /* Pods-FireChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.debug.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,8 @@
 				60450C87247CA41700DFF6EB /* InputContainerView.swift */,
 				60450C89247CA73400DFF6EB /* CustomTextField.swift */,
 				60C40AEA24F9441000DACCD8 /* UserCell.swift */,
+				60C40AF224F97C7C00DACCD8 /* CustomInputAccessoryView.swift */,
+				60C40AF424F98D3500DACCD8 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 				60450C80247366B300DFF6EB /* Authentication */,
 				60450C7E24735D2100DFF6EB /* ConversationsController.swift */,
 				60C40AE824F93EBB00DACCD8 /* NewMessageController.swift */,
+				60C40AF024F9766F00DACCD8 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,12 +324,15 @@
 				60450C6724735C5400DFF6EB /* SceneDelegate.swift in Sources */,
 				60C40AED24F94AD800DACCD8 /* User.swift in Sources */,
 				60C40AEF24F94B8500DACCD8 /* Service.swift in Sources */,
+				60C40AF524F98D3500DACCD8 /* MessageCell.swift in Sources */,
 				60450C84247366E400DFF6EB /* RegistrationController.swift in Sources */,
 				60450C82247366D600DFF6EB /* LoginController.swift in Sources */,
 				60450C862474891400DFF6EB /* Extensions.swift in Sources */,
 				6079DD662485D70D0001AD0D /* LoginViewModel.swift in Sources */,
+				60C40AF124F9766F00DACCD8 /* ChatController.swift in Sources */,
 				60450C8A247CA73400DFF6EB /* CustomTextField.swift in Sources */,
 				60C40AE924F93EBB00DACCD8 /* NewMessageController.swift in Sources */,
+				60C40AF324F97C7C00DACCD8 /* CustomInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
