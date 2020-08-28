@@ -22,6 +22,7 @@ class CustomInputAccessoryView: UIView {
         let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
         tv.backgroundColor = .clear
+        tv.isScrollEnabled = false
         return tv
     }()
     
