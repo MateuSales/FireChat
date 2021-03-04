@@ -15,6 +15,7 @@ protocol AuthenticationControllerProtocol {
 }
 
 class LoginController: UIViewController {
+    
     // MARK: - Properties
     
     private var viewModel = LoginViewModel()
